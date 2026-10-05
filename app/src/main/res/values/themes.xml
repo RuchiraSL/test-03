@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.Nifti" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">#1b2430</item>
+        <item name="android:navigationBarColor">#1b2430</item>
+        <item name="android:windowBackground">#1b2430</item>
+    </style>
+</resources>
