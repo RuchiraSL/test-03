@@ -1,18 +1,12 @@
-plugins { id 'com.android.application' }
-android {
-    namespace 'com.niftitech.invoicing'
-    compileSdk 34
-    defaultConfig {
-        applicationId "com.niftitech.invoicing"
-        minSdk 26
-        targetSdk 34
-        versionCode 1
-        versionName "1.0"
-    }
-    buildTypes { release { minifyEnabled false } }
-    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+// Keep Kotlin runtime artifacts on one compatible version and avoid the
+// legacy jdk7/jdk8 split artifacts that cause duplicate classes with Kotlin 1.8+.
+configurations.configureEach {
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk7'
+    exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
 }
+
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.8.22'
 }
